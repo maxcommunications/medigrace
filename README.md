@@ -29,6 +29,14 @@
 - レスポンシブ対応（PC／タブレット／スマホ）、スマホは固定フッターバー（LINE予約・お問い合わせ）とフルスクリーンドロワーメニュー
 - 構造化データ（JSON-LD）、OGP、canonical 設定済み
 
+## 公開先（本番リポジトリ）
+
+このフォルダの内容は公開用リポジトリ **https://github.com/maxcommunications/medigrace** に移し、GitHub Pagesで公開しています。
+
+- 公開URL: https://maxcommunications.github.io/medigrace/
+- 更新方法: 公開リポジトリの `main` にプッシュすると、GitHub Actionsが自動で `gh-pages` ブランチへ公開します（手作業のアップロード不要）
+- 独自ドメイン化: 公開リポジトリのルートに `CNAME` ファイル（中身は `medigrace.co.jp` の1行）を追加し、ドメインのDNSで `maxcommunications.github.io` へのCNAMEレコード（wwwなしの場合はAレコード 185.199.108.153〜111.153）を設定
+
 ## 公開前に必ずご確認・差し替えいただく項目
 
 ※ 全ページ下部の「PICK UP」バナー（講習募集／Q&A／アピアランスケア／クリニック募集／LINE公式）と「提携クリニック・関連サイト」バナーは `assets/css/style.css` と共通フッター内で構成しています。リンク先・文言は自由に変更できます。
