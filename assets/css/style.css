@@ -681,3 +681,25 @@ body.menu-open{overflow:hidden}
 .sns a{background:#111;color:#fff;border-color:#111}
 .sns a img{width:42px;height:42px;border-radius:50%}
 .sns a:hover{background:var(--cacao);border-color:var(--cacao)}
+
+/* ---------- staff / artists ---------- */
+.staff{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.staff__card{background:var(--white);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.staff__card:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(66,36,20,.35)}
+.staff__photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--linen)}
+.staff__photo img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.2s var(--ease)}
+.staff__card:hover .staff__photo img{transform:scale(1.04)}
+.staff__role{position:absolute;left:0;top:0;padding:7px 14px;font-size:10.5px;letter-spacing:.24em;background:rgba(66,36,20,.88);color:var(--rose)}
+.staff__role.is-rep{background:var(--gold);color:#fff}
+.staff__body{padding:26px 26px 28px;display:flex;flex-direction:column;flex:1}
+.staff__title{font-size:11.5px;letter-spacing:.2em;color:var(--taupe)}
+.staff__name{font-family:var(--font-serif);font-size:22px;letter-spacing:.14em;color:var(--cacao);margin-top:6px;line-height:1.4}
+.staff__name small{display:block;font-family:var(--font-en);font-size:12px;letter-spacing:.24em;color:var(--gold);margin-top:4px}
+.staff__desc{font-size:13.5px;color:var(--umber);margin-top:14px;line-height:1.9;flex:1}
+.staff__tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.staff__tags li{font-size:10.5px;letter-spacing:.1em;padding:3px 10px;border-radius:999px;background:var(--linen);color:var(--umber)}
+.staff__ig{display:inline-flex;align-items:center;gap:10px;margin-top:20px;font-size:12px;letter-spacing:.14em;color:var(--cacao);padding:11px 16px;border:1px solid var(--cacao);align-self:flex-start;transition:background .3s,color .3s}
+.staff__ig svg{width:18px;height:18px}
+.staff__ig:hover{background:var(--cacao);color:#fff}
+@media (max-width:1100px){.staff{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.staff{grid-template-columns:1fr}}
