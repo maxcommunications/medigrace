@@ -904,3 +904,17 @@ body.menu-open{overflow:hidden}
 .bnr--care{background:linear-gradient(90deg,#fdf5f7,#fbeef1)}
 .bnr--care .bnr__bg img{position:absolute;right:0;top:0;height:100%;width:52%;object-fit:cover;object-position:center;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 40%);mask-image:linear-gradient(90deg,transparent 0%,#000 40%)}
 @media (max-width:820px){.bnr--care .bnr__bg img{width:70%;opacity:.55}}
+
+/* ---------- simplified top ---------- */
+.hero{min-height:82svh}
+.hero__inner{padding:160px var(--gutter) 140px}
+.concept-solo p{font-size:15px;line-height:2.1;color:var(--umber)}
+.concept-solo p+p{margin-top:1.3em}
+.concept-solo .sec-title{margin-bottom:28px}
+.strengths{margin-top:40px;border-top:1px solid var(--line)}
+.strengths li{padding:20px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.9;color:var(--umber)}
+.strengths li b{display:block;font-weight:500;font-family:var(--font-serif);font-size:17px;letter-spacing:.06em;color:var(--cacao);margin-bottom:4px}
+.menu-card{border-top:2px solid var(--rose);background:var(--white)}
+.menu-card__body{padding:30px 28px 32px}
+@media (max-width:820px){.hero{min-height:70svh}.hero__inner{padding:140px var(--gutter) 90px}}
+.split--solo{grid-template-columns:1fr;max-width:760px;margin-inline:auto}
