@@ -53,8 +53,37 @@
     });
   });
 
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero parallax: 背景をゆっくり追従させ、テキストはスクロールで溶けるように消す */
+  var heroBg = document.querySelector('.hero__bg');
+  var heroInner = document.querySelector('.hero__inner');
+  if (heroBg && !reduceMotion) {
+    var heroH = 0;
+    var ticking = false;
+    function measureHero() { heroH = heroBg.parentNode.offsetHeight || window.innerHeight; }
+    function paintHero() {
+      ticking = false;
+      var y = window.scrollY;
+      if (y > heroH) return;
+      heroBg.style.transform = 'translate3d(0,' + (y * 0.22).toFixed(1) + 'px,0)';
+      if (heroInner) {
+        var p = Math.min(1, y / (heroH * 0.7));
+        heroInner.style.opacity = String(1 - p * 0.9);
+        heroInner.style.transform = 'translate3d(0,' + (y * 0.1).toFixed(1) + 'px,0)';
+      }
+    }
+    function requestHero() {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(paintHero); }
+    }
+    measureHero();
+    window.addEventListener('scroll', requestHero, { passive: true });
+    window.addEventListener('resize', function () { measureHero(); requestHero(); });
+    paintHero();
+  }
+
   /* scroll reveal */
-  var targets = document.querySelectorAll('.reveal');
+  var targets = document.querySelectorAll('.reveal, .reveal-stagger');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
