@@ -931,6 +931,8 @@ body.menu-open{overflow:hidden}
 .hero__title span:nth-child(1) i{animation-delay:.45s}
 .hero__title span:nth-child(2) i{animation-delay:.62s}
 @keyframes lineUp{to{transform:none}}
+.sp-br{display:none}
+@media (max-width:560px){.sp-br{display:inline}.hero__title{font-size:clamp(28px,8.4vw,40px)}}
 .hero__bg{will-change:transform}
 .hero__inner{will-change:transform,opacity}
 
@@ -966,12 +968,12 @@ body.menu-open{overflow:hidden}
 .sec-head.reveal.is-in .ja::before,.sec-head.reveal.is-in .ja::after{transform:scaleX(1)}
 
 /* 写真: 下から開くワイプ＋わずかなズームアウト */
-.reveal .staff__photo,.reveal .site-bnr__img,.reveal .menu-card__img,.reveal .bnr__bg,.reveal.reasons__visual,.reveal .reasons__visual,.reveal .concept__media,.reveal .message__media{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease) .1s}
-.reveal.is-in .staff__photo,.reveal.is-in .site-bnr__img,.reveal.is-in .menu-card__img,.reveal.is-in .bnr__bg,.reveal.is-in.reasons__visual,.reveal.is-in .reasons__visual,.reveal.is-in .concept__media,.reveal.is-in .message__media{clip-path:inset(0)}
-.case.reveal{clip-path:inset(0 0 100% 0);transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease),clip-path 1.2s var(--ease) .1s}
-.case.reveal.is-in{clip-path:inset(0)}
-.case.reveal img,.staff__card.reveal .staff__photo img,.reveal .site-bnr__img img,.reveal .bnr__bg img{transform:scale(1.12);transition:transform 1.6s var(--ease) .1s}
-.case.reveal.is-in img,.staff__card.reveal.is-in .staff__photo img,.reveal.is-in .site-bnr__img img,.reveal.is-in .bnr__bg img{transform:none;transition:transform 1.6s var(--ease) .1s}
+.reveal .staff__photo,.reveal .site-bnr__img,.reveal .menu-card__img,.reveal .bnr__bg,.reveal .reasons__visual,.reveal .concept__media,.reveal .message__media{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease) .1s}
+.reveal.is-in .staff__photo,.reveal.is-in .site-bnr__img,.reveal.is-in .menu-card__img,.reveal.is-in .bnr__bg,.reveal.is-in .reasons__visual,.reveal.is-in .concept__media,.reveal.is-in .message__media{clip-path:inset(0)}
+.case.reveal img{clip-path:inset(0 0 100% 0)}
+.case.reveal.is-in img{clip-path:inset(0)}
+.case.reveal img,.staff__card.reveal .staff__photo img,.reveal .site-bnr__img img,.reveal .bnr__bg img{transform:scale(1.12);transition:transform 1.6s var(--ease) .1s,clip-path 1.2s var(--ease) .1s}
+.case.reveal.is-in img,.staff__card.reveal.is-in .staff__photo img,.reveal.is-in .site-bnr__img img,.reveal.is-in .bnr__bg img{transform:none;transition:transform 1.6s var(--ease) .1s,clip-path 1.2s var(--ease) .1s}
 .case.reveal.is-in:hover img{transform:scale(1.05);transition:transform 1.2s var(--ease)}
 .staff__card.reveal.is-in:hover .staff__photo img{transform:scale(1.04);transition:transform 1.2s var(--ease)}
 
@@ -986,7 +988,7 @@ body.menu-open{overflow:hidden}
   .reveal--title::after{transform:translateX(-50%) scaleX(1);transition:none}
   .sec-head.reveal .ja::before,.sec-head.reveal .ja::after{transform:none;transition:none}
   .reveal-stagger>*{opacity:1;transform:none;transition:none}
-  .reveal .staff__photo,.reveal .site-bnr__img,.reveal .menu-card__img,.reveal .bnr__bg,.reveal .reasons__visual,.reveal .concept__media,.reveal .message__media,.case.reveal{clip-path:none;transition:none}
+  .reveal .staff__photo,.reveal .site-bnr__img,.reveal .menu-card__img,.reveal .bnr__bg,.reveal .reasons__visual,.reveal .concept__media,.reveal .message__media,.case.reveal img{clip-path:none;transition:none}
   .case.reveal img,.staff__card.reveal .staff__photo img,.reveal .site-bnr__img img,.reveal .bnr__bg img{transform:none;transition:none}
   .btn::before{display:none}
 }
