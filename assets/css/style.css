@@ -992,3 +992,6 @@ body.menu-open{overflow:hidden}
   .case.reveal img,.staff__card.reveal .staff__photo img,.reveal .site-bnr__img img,.reveal .bnr__bg img{transform:none;transition:none}
   .btn::before{display:none}
 }
+
+/* スマホ・タブレット: 下部の固定バー（LINE予約・お問い合わせ）と重複するため、ヘッダーの LINE ボタンは出さない */
+@media (max-width:820px){.header__cta{display:none}}
